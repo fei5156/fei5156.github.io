@@ -4,13 +4,14 @@
 baseurl:
 url: http://cangin.top
 date_format: "ordinal"
-title: 凔音_Cangin
+title: 凔音/Cangin
 subtitle: "Cangin's Personal Blog"
 description: "Record ideas and knowledge"
 keywords: Algorithm,Machine Learning(eg.Deep Learning),Data mining
 timezone: Asia/Beijing
 encoding: "utf-8"
-side_bar_repo_limit: 3
+#显示git仓库的数量
+side_bar_repo_limit: 1
 
 # ---------------- #
 #      Author      #
@@ -19,7 +20,7 @@ author: Cangin
 organization: FINAL
 organization_url: http://cangin.top
 github_username: fei5156
-location: BeiJing, BeiJing
+location: BeiJing
 email: fei51568@gmail.com
 
 # ---------------- #
