@@ -1,0 +1,23 @@
+- name: Programming language
+  keywords:
+      - Java
+      - Lua
+#      - C
+#      - C++
+#      - PHP
+      - Python
+#      - hadoop
+#      - hive
+
+# 研究方向
+- name: Research Direction
+  keywords:
+      - NLP
+      - Data Analysis
+#      - Business Intelligence
+      - Recommended System
+      - Machine Learning
+
+- name: Research Results
+  keywords:
+      - NULL
