@@ -5,8 +5,8 @@ baseurl:
 url: http://cangin.top
 date_format: "ordinal"
 title: 凔音/Cangin
-subtitle: "你们要谨慎行事，不要像愚昧人，当像智慧人。要爱惜光阴，因为现今的世代邪恶。（以弗所书5:15-16）"
-#subtitle: "Cangin's Personal Blog"
+subtitle: "你们要谨慎行事，不要像愚昧人，当像智慧人。要爱惜光阴，因为现今的世代邪恶。"
+#subtitle: "Cangin's Personal Blog （以弗所书5:15-16）"
 description: "Record ideas and knowledge"
 keywords: Algorithm,Machine Learning(eg.Deep Learning),Data mining
 timezone: Asia/Beijing
