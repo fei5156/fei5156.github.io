@@ -2,8 +2,8 @@
 layout: post
 title: OpenResty Lua 的使用 (一) 环境搭建
 categories: Lua
-description: lua，OpenResty，Lua，Nginx，linux
-keywords: lua，OpenResty，Lua，Nginx，linux
+description: Linux，OpenResty，Lua，Nginx
+keywords: Linux，OpenResty，Lua，Nginx
 ---
 
 OpenResty Lua 的使用 (一) 环境搭建
@@ -104,37 +104,37 @@ wget https://openresty.org/download/openresty-1.13.6.2.tar.gz
   `cd openresty-1.13.6.2`
 
 9. 可以看到存在一个名为configure的可执行脚本程序。它是用于检查系统是否有编译时所需的库，以及库的版本是否满足编译的需要等安装所需要的系统信息。为随后的编译工作做准备。在当前文件夹下执行如下设置，注意不能有换行,注意版本，注意刚刚下载的几个模块路径需要修改：
-```
-两种写法： 都可以，第二种是每行后面一个/ 代表不换行
-./configure --prefix=/usr/local/openresty --with-debug --add-module=/data/software/ngx_cache_purge-2.3 --add-module=/data/software/nginx_upstream_check_module-0.3.0 --with-http_sub_module --with-http_stub_status_module --with-http_ssl_module --with-http_realip_module --with-pcre-jit --with-http_v2_module --with-openssl=/data/software/openssl-1.0.2l --with-pcre=/data/software/pcre-8.41 --with-http_gzip_static_module --with-http_flv_module --with-stream --with-stream_ssl_module
-
- ./configure --prefix=/usr/local/openresty \
-  --with-debug \
-  --add-module=/data/software/ngx_cache_purge-2.3 --add-module=/data/software/nginx_upstream_check_module-0.3.0 --with-http_sub_module --with-http_stub_status_module --with-http_ssl_module --with-http_realip_module --with-pcre-jit --with-http_v2_module --with-openssl=/data/software/openssl-1.0.2l --with-pcre=/data/software/pcre-8.41 --with-http_gzip_static_module --with-http_flv_module --with-stream --with-stream_ssl_module --with-stream --with-stream_ssl_module
-```
-```
-如下这些参数会默认加载 不需要另外操作，如果加上的话重复加载模块，容易出错，同时也会出现找不到config文件的请客，我也没找到怎么处理，所及就没加。
-  --with-cc-opt='-DNGX_LUA_USE_ASSERT -DNGX_LUA_ABORT_AT_PANIC -O2' \
-  --add-module=../ngx_devel_kit-0.3.0 \
-  --add-module=../echo-nginx-module-0.61 \
-  --add-module=../xss-nginx-module-0.06 \
-  --add-module=../ngx_coolkit-0.2rc3 \
-  --add-module=../set-misc-nginx-module-0.32 \
-  --add-module=../form-input-nginx-module-0.12 \
-  --add-module=../encrypted-session-nginx-module-0.08 \
-  --add-module=../srcache-nginx-module-0.31 \
-  --add-module=../ngx_lua-0.10.13 \
-  --add-module=../ngx_lua_upstream-0.07 \
-  --add-module=../headers-more-nginx-module-0.33 \
-  --add-module=../array-var-nginx-module-0.05 \
-  --add-module=../memc-nginx-module-0.19 \
-  --add-module=../redis2-nginx-module-0.15 \
-  --add-module=../redis-nginx-module-0.3.7 \
-  --add-module=../rds-json-nginx-module-0.15 \
-  --add-module=../rds-csv-nginx-module-0.09 \
-  --add-module=../ngx_stream_lua-0.0.5 \
-  --with-ld-opt='-Wl,-rpath,/usr/local/openresty/nginx/luajit/lib' \
-```
+    ```
+    两种写法： 都可以，第二种是每行后面一个/ 代表不换行
+    ./configure --prefix=/usr/local/openresty --with-debug --add-module=/data/software/ngx_cache_purge-2.3 --add-module=/data/software/nginx_upstream_check_module-0.3.0 --with-http_sub_module --with-http_stub_status_module --with-http_ssl_module --with-http_realip_module --with-pcre-jit --with-http_v2_module --with-openssl=/data/software/openssl-1.0.2l --with-pcre=/data/software/pcre-8.41 --with-http_gzip_static_module --with-http_flv_module --with-stream --with-stream_ssl_module
+    
+     ./configure --prefix=/usr/local/openresty \
+      --with-debug \
+      --add-module=/data/software/ngx_cache_purge-2.3 --add-module=/data/software/nginx_upstream_check_module-0.3.0 --with-http_sub_module --with-http_stub_status_module --with-http_ssl_module --with-http_realip_module --with-pcre-jit --with-http_v2_module --with-openssl=/data/software/openssl-1.0.2l --with-pcre=/data/software/pcre-8.41 --with-http_gzip_static_module --with-http_flv_module --with-stream --with-stream_ssl_module --with-stream --with-stream_ssl_module
+    ```
+    ```
+    如下这些参数会默认加载 不需要另外操作，如果加上的话重复加载模块，容易出错，同时也会出现找不到config文件的请客，我也没找到怎么处理，所及就没加。
+      --with-cc-opt='-DNGX_LUA_USE_ASSERT -DNGX_LUA_ABORT_AT_PANIC -O2' \
+      --add-module=../ngx_devel_kit-0.3.0 \
+      --add-module=../echo-nginx-module-0.61 \
+      --add-module=../xss-nginx-module-0.06 \
+      --add-module=../ngx_coolkit-0.2rc3 \
+      --add-module=../set-misc-nginx-module-0.32 \
+      --add-module=../form-input-nginx-module-0.12 \
+      --add-module=../encrypted-session-nginx-module-0.08 \
+      --add-module=../srcache-nginx-module-0.31 \
+      --add-module=../ngx_lua-0.10.13 \
+      --add-module=../ngx_lua_upstream-0.07 \
+      --add-module=../headers-more-nginx-module-0.33 \
+      --add-module=../array-var-nginx-module-0.05 \
+      --add-module=../memc-nginx-module-0.19 \
+      --add-module=../redis2-nginx-module-0.15 \
+      --add-module=../redis-nginx-module-0.3.7 \
+      --add-module=../rds-json-nginx-module-0.15 \
+      --add-module=../rds-csv-nginx-module-0.09 \
+      --add-module=../ngx_stream_lua-0.0.5 \
+      --with-ld-opt='-Wl,-rpath,/usr/local/openresty/nginx/luajit/lib' \
+    ```
  可以在测试环境打开debug，使用`--with-debug` ，nginx默认是info以上的。
 有的地方看到-j2参数，应该是说明电脑支持多核工作，假设是双核，可以使用-j2。
 其他具体参数介绍可以看之前的一篇文章[[^Nginx的使用之编译配置参数]]
