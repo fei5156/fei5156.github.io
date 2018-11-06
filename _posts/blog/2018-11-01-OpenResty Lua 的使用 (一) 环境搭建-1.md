@@ -1,9 +1,9 @@
 ---
 layout: post
 title: OpenResty Lua 的使用 (一) 环境搭建
-categories: Nginx
-description: Linux，OpenResty，Lua，Nginx
-keywords: Linux，OpenResty，Lua，Nginx
+categories: Lua
+description: lua，OpenResty，Lua，Nginx，linux
+keywords: lua，OpenResty，Lua，Nginx，linux
 ---
 
 OpenResty Lua 的使用 (一) 环境搭建
