@@ -37,35 +37,36 @@ OpenResty Lua 的使用 (一) 环境搭建
   
 * 进入/opt/download文件夹下`cd download/`。    
 
-* 下载OpenrestyLua,可以在Win系统下载后上传，也可以直接在服务器下载。[[中文下载地址](http://openresty.org/cn/download.html)],[[英文下载地址](https://openresty.org/en/download.html)]，选择对应版本进行下载。
-此处介绍在服务器直接下载：`wget https://openresty.org/download/openresty-1.13.6.2.tar.gz`
+* 下载OpenrestyLua,可以在Win系统下载后上传，也可以直接在服务器下载。[[中文下载地址](http://openresty.org/cn/download.html)],[[英文下载地址](https://openresty.org/en/download.html)]，选择对应版本进行下载。此处介绍在服务器直接下载：    
+`wget https://openresty.org/download/openresty-1.13.6.2.tar.gz`
 
 * 同时再下载一些一会需要的模块和依赖的软件。
-    ```
-  * 下载ngx_cache_purge模块，该模块用于清理nginx缓存，非必需，建议安装。    
+
+    ```    
+    * 下载ngx_cache_purge模块，该模块用于清理nginx缓存，非必需，建议安装。    
       `wget https://github.com/FRiCKLE/ngx_cache_purge/archive/2.3.tar.gz`
- 
-  * 下载nginx_upstream_check_module模块，该模块用于ustream健康检查，非必需，建议安装。    
+    
+    * 下载nginx_upstream_check_module模块，该模块用于ustream健康检查，非必需，建议安装。    
      `wget https://github.com/yaoweibin/nginx_upstream_check_module/archive/v0.3.0.tar.gz`    
       也可以到GitHub主页自己打包下载zip，然后上传解压，https://github.com/yaoweibin/nginx_upstream_check_module 
-
-  * 下载openssl模块,可以到 https://www.openssl.org/source/ 下载最新版，https://ftp.openssl.org/source/old/1.0.2/ 下载旧版。    
+    
+    * 下载openssl模块,可以到 https://www.openssl.org/source/ 下载最新版，https://ftp.openssl.org/source/old/1.0.2/ 下载旧版。    
      `wget https://www.openssl.org/source/openssl-1.1.1.tar.gz`    
      `wget https://ftp.openssl.org/source/old/1.0.2/openssl-1.0.2l.tar.gz`
-
-  * 下载pcre，地址：https://ftp.pcre.org/pub/pcre/ 自行下载。    
+    
+    * 下载pcre，地址：https://ftp.pcre.org/pub/pcre/ 自行下载。    
      `wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz`
-
-  * 安装drizzle模块(访问mysql数据库模块，非必需，建议安装)。    
+    
+    * 安装drizzle模块(访问mysql数据库模块，非必需，建议安装)。    
      `wget http://agentzh.org/misc/nginx/drizzle7-2011.07.21.tar.gz`
     
-  * 下载nginx-http-concat(合并静态文件请求模块，非必需，建议安装)。    
+    * 下载nginx-http-concat(合并静态文件请求模块，非必需，建议安装)。    
      `wget https://github.com/alibaba/nginx-http-concat/archive/master.zip`
     
-  * 安装Zlib。    
+    * 安装Zlib。    
      `wget https://zlib.net/fossils/zlib-1.2.8.tar.gz`
     
-  * 下载luajit，此处使用OpenResty，忽略此步骤。    
+    * 下载luajit，此处使用OpenResty，忽略此步骤。    
      `wget http://luajit.org/download/LuaJIT-2.0.5.tar.gz`
     ```
 * 解压上面下载的几个文件。    
